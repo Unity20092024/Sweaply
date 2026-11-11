@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import { Wordmark } from "./header";
+import { SweaplyLogo } from "@/components/branding/sweaply-logo";
 const groups = [
   {
     title: "Explore",
@@ -34,7 +34,7 @@ export function Footer() {
     <footer className="site-footer">
       <div className="container footer-grid">
         <div className="footer-brand">
-          <Wordmark />
+          <SweaplyLogo />
           <p>
             A little less to do.
             <br />A little more room for you.

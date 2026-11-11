@@ -22,3 +22,16 @@ Review at 360, 375, 390, 430, 768, 1024, and 1440 pixels:
 
 ## Delivery environment
 The repository was empty, with no commit or `main` ref. The requested feature branch is the initial branch. Creating a PR against `main` requires an existing base branch; no commit is pushed to `main` in this task.
+
+## Official logo update — browser verification
+
+The subsequent branding update was verified with the environment's installed Chromium and Playwright against a local production server. This supersedes the earlier browser limitation for the logo checks below; it does not claim a full regression test of all homepage features.
+
+- Production build, lint, TypeScript, and existing production-content checks pass.
+- At 360, 390, 430, 768, 1024, and 1440px: both logos load, retain the 3:1 ratio, use `object-fit: contain`, and have the approved alternative text.
+- No header action overlap, horizontal page overflow, or browser page errors at those widths. Navigation still opens and closes.
+- Original PNG served with HTTP 200; response SHA-256 matches the supplied ZIP asset exactly. Original RGBA transparency preserved with no image modifications.
+- Screenshots of header and footer at 360, 390, 430, and 1440px are in `docs/screenshots/branding/`. Mobile header/footer and desktop header screenshots were visually inspected.
+- Machine-readable measurements are in `docs/screenshots/branding/results.json`.
+
+Only the shared logo, its CSS, and branding documentation/assets changed. Homepage content, cards, booking buttons, section layouts, and curves are unchanged. Authentication pages remain unbuilt; their future implementation can reuse `SweaplyLogo`.

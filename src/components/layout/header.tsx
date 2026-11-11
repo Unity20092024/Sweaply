@@ -1,6 +1,7 @@
 "use client";
 import { Menu, X, UserRound, ArrowUpRight } from "lucide-react";
 import { useRef, useState } from "react";
+import { SweaplyLogo } from "@/components/branding/sweaply-logo";
 const entries = [
   { label: "Home", href: "#home" },
   { label: "Our Services", href: "#services" },
@@ -11,24 +12,13 @@ const entries = [
   { label: "Contact Us" },
   { label: "Sign In / Create Account" },
 ];
-export function Wordmark() {
-  return (
-    <a className="wordmark" href="#home" aria-label="Sweaply home">
-      sweaply
-      <span className="logo-spark" aria-hidden="true">
-        ✦
-      </span>
-      <span className="logo-swoop" aria-hidden="true" />
-    </a>
-  );
-}
 export function Header() {
   const [open, setOpen] = useState(false);
   const trigger = useRef<HTMLButtonElement>(null);
   return (
     <header className="site-header">
       <div className="container header-inner">
-        <Wordmark />
+        <SweaplyLogo priority />
         <nav className="desktop-nav" aria-label="Main navigation">
           <a href="#services">Our Services</a>
           <a href="#cleaners">Find a Cleaner</a>

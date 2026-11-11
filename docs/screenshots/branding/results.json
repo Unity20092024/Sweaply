@@ -1,0 +1,53 @@
+{
+  "assetSha256": "230306e0fbbbda1acececfd3853c0d19670a0dee256df824c67d813fc42933dc",
+  "checks": [
+    {
+      "width": 360,
+      "logos": 2,
+      "ratio": "3:1",
+      "overlap": false,
+      "overflow": false,
+      "browserErrors": 0
+    },
+    {
+      "width": 390,
+      "logos": 2,
+      "ratio": "3:1",
+      "overlap": false,
+      "overflow": false,
+      "browserErrors": 0
+    },
+    {
+      "width": 430,
+      "logos": 2,
+      "ratio": "3:1",
+      "overlap": false,
+      "overflow": false,
+      "browserErrors": 0
+    },
+    {
+      "width": 768,
+      "logos": 2,
+      "ratio": "3:1",
+      "overlap": false,
+      "overflow": false,
+      "browserErrors": 0
+    },
+    {
+      "width": 1024,
+      "logos": 2,
+      "ratio": "3:1",
+      "overlap": false,
+      "overflow": false,
+      "browserErrors": 0
+    },
+    {
+      "width": 1440,
+      "logos": 2,
+      "ratio": "3:1",
+      "overlap": false,
+      "overflow": false,
+      "browserErrors": 0
+    }
+  ]
+}
