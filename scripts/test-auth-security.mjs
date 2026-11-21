@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { resolveSupabaseConfig } from "../src/lib/supabase/options.ts";
 import { validateAuth, safeNext } from "../src/lib/auth/validation.ts";
 function form(data) {
   const f = new FormData();
@@ -68,4 +69,23 @@ for (const target of [
 assert.equal(safeNext("/reset-password"), "/reset-password");
 console.log(
   "PASS: server validation, password bounds, confirmation matching, and redirect allowlist",
+);
+
+// Disabled configuration must not even read provider values, let alone connect.
+for (const enabled of [undefined, "false", "", "TRUE"]) {
+  const env = { SWEAPLY_SUPABASE_ENABLED: enabled };
+  for (const key of [
+    "NEXT_PUBLIC_SUPABASE_URL",
+    "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY",
+    "SITE_URL",
+  ])
+    Object.defineProperty(env, key, {
+      get() {
+        throw new Error("Disabled integration read provider config");
+      },
+    });
+  assert.equal(resolveSupabaseConfig(env), null);
+}
+console.log(
+  "PASS: Supabase connection is disabled by default and does not read provider values without explicit opt-in",
 );

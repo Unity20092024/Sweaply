@@ -10,7 +10,8 @@
     "typecheck": "tsc --noEmit",
     "check:production": "node scripts/check-production.mjs",
     "test:security": "node scripts/test-auth-security.mjs && node scripts/test-database.mjs",
-    "test:browser": "node scripts/test-browser.mjs"
+    "test:browser": "node scripts/test-browser.mjs",
+    "test:demo": "node scripts/test-demo-browser.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "0.12.7",

@@ -234,6 +234,8 @@
     "Invalid token/code failure",
     "External redirect denied",
     "Unconfigured reset guarded",
-    "Forged cookie exposes no account data"
+    "Forged cookie exposes no account data",
+    "Development preview returns 404 in production even when preview flag is true",
+    "Offline success notices cannot be forged through query parameters"
   ]
 }

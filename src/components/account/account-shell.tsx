@@ -30,11 +30,15 @@ export function AccountShell({
   section,
   email,
   authenticated = false,
+  preview = false,
+  basePath = "/account",
 }: {
   children: React.ReactNode;
   section: AccountSection;
   email?: string;
   authenticated?: boolean;
+  preview?: boolean;
+  basePath?: string;
 }) {
   return (
     <div className="customer-page">
@@ -46,12 +50,16 @@ export function AccountShell({
       </header>
       <div className="customer-layout">
         <aside className="customer-sidebar">
-          <span className="customer-label">YOUR SWEAPLY SPACE</span>
+          <span className="customer-label">
+            {preview ? "DEVELOPMENT UI PREVIEW" : "YOUR SWEAPLY SPACE"}
+          </span>
           <nav aria-label="Customer account">
             {navigation.map(({ key, label, icon: Icon }) => (
               <Link
                 href={
-                  key === "overview" ? "/account" : `/account?section=${key}`
+                  key === "overview"
+                    ? basePath
+                    : `${basePath}${basePath.includes("?") ? "&" : "?"}section=${key}`
                 }
                 key={key}
                 aria-current={key === section ? "page" : undefined}
@@ -68,7 +76,7 @@ export function AccountShell({
               <br />
               <strong>More room for you.</strong>
             </p>
-            {authenticated ? (
+            {authenticated && !preview ? (
               <form action={signOut}>
                 <button>
                   <LogOut size={16} /> Sign Out
@@ -82,6 +90,25 @@ export function AccountShell({
           </div>
         </aside>
         <main id="main" className="customer-main">
+          {preview && (
+            <aside
+              className="account-demo-banner"
+              aria-label="Development demonstration notice"
+            >
+              <strong>DEVELOPMENT DEMO · NOT A REAL ACCOUNT</strong>
+              <p>
+                No authentication, account, session, or database connection is
+                active. These are UI fixtures; actions do not save or submit
+                anything.
+              </p>
+              <div>
+                <Link href="/dev/account">Empty dashboard</Link>
+                <Link href="/dev/account?section=bookings&scenario=completed">
+                  Repeat-cleaner UI fixture
+                </Link>
+              </div>
+            </aside>
+          )}
           {children}
         </main>
       </div>

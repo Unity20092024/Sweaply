@@ -135,6 +135,12 @@ export async function loadAccount() {
     }[],
   };
 }
+// A view model deliberately contains no session, token, or authenticated identity.
+export type AccountSnapshot = Omit<
+  Extract<Awaited<ReturnType<typeof loadAccount>>, { error: false }>,
+  "user" | "error"
+>;
+
 export function label(value: string) {
   return (
     (

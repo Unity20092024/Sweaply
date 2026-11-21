@@ -1,3 +1,4 @@
+import { accountPreviewEnabled } from "@/lib/development";
 import type { Metadata } from "next";
 import { AuthForm } from "@/components/auth/auth-form";
 import { authConfig } from "@/lib/supabase/config";
@@ -11,6 +12,7 @@ export default async function SignIn({
   searchParams: Promise<{ notice?: string }>;
 }) {
   const { notice } = await searchParams;
+  const configured = !!authConfig();
   return (
     <>
       <span className="eyebrow">WELCOME BACK</span>
@@ -23,7 +25,7 @@ export default async function SignIn({
         Sign in to your Sweaply account. Your home, your requests, all in one
         place.
       </p>
-      {notice === "password-updated" && (
+      {configured && notice === "password-updated" && (
         <p className="form-notice" role="status">
           Your password is updated. Sign in with your new password.
         </p>
@@ -34,7 +36,11 @@ export default async function SignIn({
           try again.
         </p>
       )}
-      <AuthForm mode="sign-in" configured={!!authConfig()} />
+      <AuthForm
+        mode="sign-in"
+        configured={configured}
+        preview={accountPreviewEnabled()}
+      />
     </>
   );
 }

@@ -37,7 +37,7 @@ const routeDirectories = readdirSync("src/app", { withFileTypes: true }).filter(
 );
 assert.deepEqual(
   routeDirectories.map((d) => d.name).sort(),
-  ["(auth)", "account", "auth"],
+  ["(auth)", "account", "auth", "dev"],
   "Only homepage and phase-two account/auth routes are implemented",
 );
 console.log(

@@ -1,0 +1,168 @@
+{
+  "mode": "Development UI only. Supabase disabled. No real authentication or submissions.",
+  "checks": [
+    {
+      "width": 360,
+      "section": "overview",
+      "state": "Labeled UI-only demonstration, no identity/session"
+    },
+    {
+      "width": 360,
+      "section": "quotes",
+      "state": "Labeled UI-only demonstration, no identity/session"
+    },
+    {
+      "width": 360,
+      "section": "bookings",
+      "state": "Labeled UI-only demonstration, no identity/session"
+    },
+    {
+      "width": 360,
+      "section": "cleaners",
+      "state": "Labeled UI-only demonstration, no identity/session"
+    },
+    {
+      "width": 360,
+      "section": "favorites",
+      "state": "Labeled UI-only demonstration, no identity/session"
+    },
+    {
+      "width": 360,
+      "section": "messages",
+      "state": "Labeled UI-only demonstration, no identity/session"
+    },
+    {
+      "width": 360,
+      "section": "payments",
+      "state": "Labeled UI-only demonstration, no identity/session"
+    },
+    {
+      "width": 360,
+      "section": "settings",
+      "state": "Labeled UI-only demonstration, no identity/session"
+    },
+    {
+      "width": 390,
+      "section": "overview",
+      "state": "Labeled UI-only demonstration, no identity/session"
+    },
+    {
+      "width": 390,
+      "section": "quotes",
+      "state": "Labeled UI-only demonstration, no identity/session"
+    },
+    {
+      "width": 390,
+      "section": "bookings",
+      "state": "Labeled UI-only demonstration, no identity/session"
+    },
+    {
+      "width": 390,
+      "section": "cleaners",
+      "state": "Labeled UI-only demonstration, no identity/session"
+    },
+    {
+      "width": 390,
+      "section": "favorites",
+      "state": "Labeled UI-only demonstration, no identity/session"
+    },
+    {
+      "width": 390,
+      "section": "messages",
+      "state": "Labeled UI-only demonstration, no identity/session"
+    },
+    {
+      "width": 390,
+      "section": "payments",
+      "state": "Labeled UI-only demonstration, no identity/session"
+    },
+    {
+      "width": 390,
+      "section": "settings",
+      "state": "Labeled UI-only demonstration, no identity/session"
+    },
+    {
+      "width": 430,
+      "section": "overview",
+      "state": "Labeled UI-only demonstration, no identity/session"
+    },
+    {
+      "width": 430,
+      "section": "quotes",
+      "state": "Labeled UI-only demonstration, no identity/session"
+    },
+    {
+      "width": 430,
+      "section": "bookings",
+      "state": "Labeled UI-only demonstration, no identity/session"
+    },
+    {
+      "width": 430,
+      "section": "cleaners",
+      "state": "Labeled UI-only demonstration, no identity/session"
+    },
+    {
+      "width": 430,
+      "section": "favorites",
+      "state": "Labeled UI-only demonstration, no identity/session"
+    },
+    {
+      "width": 430,
+      "section": "messages",
+      "state": "Labeled UI-only demonstration, no identity/session"
+    },
+    {
+      "width": 430,
+      "section": "payments",
+      "state": "Labeled UI-only demonstration, no identity/session"
+    },
+    {
+      "width": 430,
+      "section": "settings",
+      "state": "Labeled UI-only demonstration, no identity/session"
+    },
+    {
+      "width": 1440,
+      "section": "overview",
+      "state": "Labeled UI-only demonstration, no identity/session"
+    },
+    {
+      "width": 1440,
+      "section": "quotes",
+      "state": "Labeled UI-only demonstration, no identity/session"
+    },
+    {
+      "width": 1440,
+      "section": "bookings",
+      "state": "Labeled UI-only demonstration, no identity/session"
+    },
+    {
+      "width": 1440,
+      "section": "cleaners",
+      "state": "Labeled UI-only demonstration, no identity/session"
+    },
+    {
+      "width": 1440,
+      "section": "favorites",
+      "state": "Labeled UI-only demonstration, no identity/session"
+    },
+    {
+      "width": 1440,
+      "section": "messages",
+      "state": "Labeled UI-only demonstration, no identity/session"
+    },
+    {
+      "width": 1440,
+      "section": "payments",
+      "state": "Labeled UI-only demonstration, no identity/session"
+    },
+    {
+      "width": 1440,
+      "section": "settings",
+      "state": "Labeled UI-only demonstration, no identity/session"
+    }
+  ],
+  "mutatingRequests": 0,
+  "providerRequests": 0,
+  "authSessionCookies": 0
+}

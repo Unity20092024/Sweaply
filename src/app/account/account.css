@@ -637,3 +637,46 @@
     width: 100%;
   }
 }
+
+.account-demo-banner {
+  padding: 18px;
+  background: #fff9e8;
+  border: 1px solid #e8d9b2;
+  border-radius: 20px 6px 25px 6px;
+  margin-bottom: 28px;
+  color: #614614;
+}
+.account-demo-banner strong {
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+.account-demo-banner p {
+  font-size: 12px;
+  line-height: 1.7;
+  margin: 10px 0;
+}
+.account-demo-banner div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+}
+.account-demo-banner a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: underline;
+  font-size: 12px;
+}
+.account-demo-label {
+  font-size: 10px;
+  color: #735319;
+  background: #fff9e8;
+  padding: 6px 9px;
+  border-radius: 6px;
+}
+
+.repeat-preview-fields {
+  display: grid;
+  gap: 13px;
+  padding-bottom: 4px;
+}

@@ -9,7 +9,11 @@ import {
   CircleCheck,
 } from "lucide-react";
 import { authenticate } from "@/app/(auth)/actions";
-import type { AuthMode, FormState } from "@/lib/auth/validation";
+import {
+  validateAuth,
+  type AuthMode,
+  type FormState,
+} from "@/lib/auth/validation";
 const labels = {
   "sign-in": "Sign In",
   "sign-up": "Create My Account",
@@ -19,14 +23,19 @@ const labels = {
 export function AuthForm({
   mode,
   configured,
+  preview = false,
 }: {
   mode: AuthMode;
   configured: boolean;
+  preview?: boolean;
 }) {
-  const [state, action, pending] = useActionState(
+  const [serverState, action, pending] = useActionState(
     authenticate.bind(null, mode),
     {} as FormState,
   );
+  const [demoState, setDemoState] = useState<FormState>({});
+  const [previewFeedback, setPreviewFeedback] = useState("");
+  const state = configured ? serverState : demoState;
   const [visible, setVisible] = useState(false);
   const newPassword = mode === "sign-up" || mode === "reset-password";
   const error = (field: string) =>
@@ -39,7 +48,8 @@ export function AuthForm({
     <form action={action} className="auth-form">
       {!configured && (
         <p className="form-notice" role="status">
-          Account access is being prepared. Please check back soon.
+          Authentication is not connected. Accounts are not functional and no
+          account actions can be submitted.
         </p>
       )}
       {state.success ? (
@@ -187,6 +197,33 @@ export function AuthForm({
             )}
           </button>
         </>
+      )}
+      {preview && !configured && (
+        <div className="auth-demo-controls">
+          <strong>DEVELOPMENT DEMO · VALIDATION ONLY</strong>
+          <p>
+            This checks the form locally. It cannot sign you in, create an
+            account, or send email.
+          </p>
+          <button
+            type="button"
+            className="button button-outline"
+            onClick={(event) => {
+              const form = event.currentTarget.form;
+              if (!form) return;
+              const result = validateAuth(mode, new FormData(form));
+              setDemoState(result);
+              setPreviewFeedback(
+                result.error
+                  ? ""
+                  : "Demo form is valid. Nothing was submitted; no account or session was created.",
+              );
+            }}
+          >
+            Check form · demo only
+          </button>
+          {previewFeedback && <p role="status">{previewFeedback}</p>}
+        </div>
       )}
       {mode === "sign-in" && (
         <p className="auth-switch">

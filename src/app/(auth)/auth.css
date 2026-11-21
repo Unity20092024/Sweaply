@@ -367,3 +367,25 @@
     animation: none;
   }
 }
+
+.auth-demo-controls {
+  padding: 16px;
+  background: #fff9e8;
+  border: 1px solid #e8d9b2;
+  border-radius: 19px 5px 24px 5px;
+  color: #614614;
+  display: grid;
+  gap: 12px;
+}
+.auth-demo-controls strong {
+  font-size: 10px;
+  letter-spacing: 0.04em;
+}
+.auth-demo-controls p {
+  font-size: 12px;
+  line-height: 1.7;
+}
+.auth-demo-controls .button {
+  font-size: 12px;
+  min-height: 44px;
+}

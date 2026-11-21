@@ -1,3 +1,4 @@
+import { accountPreviewEnabled } from "@/lib/development";
 import { AuthForm } from "@/components/auth/auth-form";
 import { authConfig } from "@/lib/supabase/config";
 export const metadata = {
@@ -17,7 +18,11 @@ export default function ForgotPassword() {
         Enter your email and we’ll send instructions to reset your password, if
         you have an account.
       </p>
-      <AuthForm mode="forgot-password" configured={!!authConfig()} />
+      <AuthForm
+        mode="forgot-password"
+        configured={!!authConfig()}
+        preview={accountPreviewEnabled()}
+      />
     </>
   );
 }

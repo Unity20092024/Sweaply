@@ -156,6 +156,34 @@ fs.mkdirSync("docs/screenshots/phase-2", { recursive: true });
   ]);
   await page.goto(origin + "/account");
   assert.equal(await page.getByRole("button", { name: "Sign Out" }).count(), 0);
+  await page.goto(origin + "/sign-in?notice=password-updated");
+  assert.equal(
+    await page
+      .getByText("Your password is updated. Sign in with your new password.", {
+        exact: true,
+      })
+      .count(),
+    0,
+    "An offline query parameter must not claim a real password update",
+  );
+  assert.equal(
+    await page
+      .getByText("DEVELOPMENT DEMO · VALIDATION ONLY", { exact: true })
+      .count(),
+    0,
+  );
+  const demoResponse = await page.goto(
+    origin + "/dev/account?scenario=completed",
+  );
+  assert.equal(
+    demoResponse.status(),
+    404,
+    "Development fixtures must not be served by a production build",
+  );
+  assert.equal(
+    await page.getByText("Demo cleaner · not a real professional").count(),
+    0,
+  );
   fs.writeFileSync(
     "docs/screenshots/phase-2/results.json",
     JSON.stringify(
@@ -171,6 +199,8 @@ fs.mkdirSync("docs/screenshots/phase-2", { recursive: true });
           "External redirect denied",
           "Unconfigured reset guarded",
           "Forged cookie exposes no account data",
+          "Development preview returns 404 in production even when preview flag is true",
+          "Offline success notices cannot be forged through query parameters",
         ],
       },
       null,

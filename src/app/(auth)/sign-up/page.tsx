@@ -1,3 +1,4 @@
+import { accountPreviewEnabled } from "@/lib/development";
 import type { Metadata } from "next";
 import { AuthForm } from "@/components/auth/auth-form";
 import { authConfig } from "@/lib/supabase/config";
@@ -18,7 +19,11 @@ export default function SignUp() {
         Create your customer account to keep your cleaning plans in one
         thoughtful place.
       </p>
-      <AuthForm mode="sign-up" configured={!!authConfig()} />
+      <AuthForm
+        mode="sign-up"
+        configured={!!authConfig()}
+        preview={accountPreviewEnabled()}
+      />
     </>
   );
 }

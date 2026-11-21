@@ -24,7 +24,7 @@ npm start
 
 ## Honest launch state
 
-`src/lib/cleaners.ts` contains the empty verified-profile collection and typed development fixtures. Production displays the local-network empty state. No ratings, testimonials, fixed prices, phone number, or confirmed bookings are invented. Estimates, service details, and cleaner applications open launch-information dialogs; they send nothing. Sign-in links to the new auth pages; phone support remains disabled. Auth requires a confirmed Supabase project and the configuration in `.env.example`. Planned pages are listed in `docs/ROADMAP.md`.
+`src/lib/cleaners.ts` contains the empty verified-profile collection and typed development fixtures. Production displays the local-network empty state. No ratings, testimonials, fixed prices, phone number, or confirmed bookings are invented. Estimates, service details, and cleaner applications open launch-information dialogs; they send nothing. Sign-in links to the new auth pages; phone support remains disabled. Supabase integration is disabled by default with `SWEAPLY_SUPABASE_ENABLED=false`. No real authentication or customer accounts are functional in this offline phase. Do not connect existing projects, provision a database, or apply the prepared migrations. Planned pages are listed in `docs/ROADMAP.md`.
 
 ## Structure
 
@@ -42,3 +42,11 @@ Import this repository as a Next.js project using the default build (`npm run bu
 ## Accessibility
 
 Semantic landmarks, skip link, visible focus, native dialogs with Escape and modal focus containment, return focus, background scroll locking, reduced-motion support, safe-area modal spacing, keyboard and swipe carousel navigation. The mobile menu uses normal document navigation and returns focus to its trigger on Escape.
+
+## Offline development preview
+
+```sh
+SWEAPLY_SUPABASE_ENABLED=false SWEAPLY_ENABLE_ACCOUNT_PREVIEW=true npm run dev -- --port 3001
+```
+
+Open `/dev/account` for the labeled UI-only dashboard or `/dev/account?section=bookings&scenario=completed` for the fictional repeat-cleaner fixture. Auth pages offer local validation checks, with real submit actions disabled. There is no demo login or simulated successful authentication. Previews return 404 in production. Run `npm run test:demo` against this development server. See `docs/PHASE-2.md` for controls, screenshots, and the future connection checklist.
