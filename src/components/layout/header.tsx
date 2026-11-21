@@ -1,6 +1,7 @@
 "use client";
 import { Menu, X, UserRound, ArrowUpRight } from "lucide-react";
 import { useRef, useState } from "react";
+import Link from "next/link";
 import { SweaplyLogo } from "@/components/branding/sweaply-logo";
 const entries = [
   { label: "Home", href: "#home" },
@@ -10,7 +11,7 @@ const entries = [
   { label: "Blog" },
   { label: "About Us" },
   { label: "Contact Us" },
-  { label: "Sign In / Create Account" },
+  { label: "Sign In / Create Account", href: "/sign-in" },
 ];
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -25,15 +26,10 @@ export function Header() {
           <a href="#how-it-works">How It Works</a>
         </nav>
         <div className="header-actions">
-          <button
-            className="sign-in"
-            disabled
-            title="Sign in is coming in a future phase"
-          >
+          <Link className="sign-in" href="/sign-in">
             <UserRound size={18} />
             <span>Sign In</span>
-            <span className="sr-only"> — coming soon</span>
-          </button>
+          </Link>
           <button
             ref={trigger}
             className="icon-button menu-toggle"

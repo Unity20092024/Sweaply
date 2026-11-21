@@ -1,0 +1,239 @@
+{
+  "mode": "Unconfigured production build. Hosted authentication and signed-in account are not claimed as tested.",
+  "checks": [
+    {
+      "width": 360,
+      "route": "/sign-in",
+      "overflow": false,
+      "privateCache": true,
+      "logo": "official 3:1",
+      "state": "unconfigured form"
+    },
+    {
+      "width": 360,
+      "route": "/sign-up",
+      "overflow": false,
+      "privateCache": true,
+      "logo": "official 3:1",
+      "state": "unconfigured form"
+    },
+    {
+      "width": 360,
+      "route": "/forgot-password",
+      "overflow": false,
+      "privateCache": true,
+      "logo": "official 3:1",
+      "state": "unconfigured form"
+    },
+    {
+      "width": 360,
+      "route": "/account",
+      "overflow": false,
+      "privateCache": true,
+      "logo": "official 3:1",
+      "state": "setup pending, no personal data"
+    },
+    {
+      "width": 375,
+      "route": "/sign-in",
+      "overflow": false,
+      "privateCache": true,
+      "logo": "official 3:1",
+      "state": "unconfigured form"
+    },
+    {
+      "width": 375,
+      "route": "/sign-up",
+      "overflow": false,
+      "privateCache": true,
+      "logo": "official 3:1",
+      "state": "unconfigured form"
+    },
+    {
+      "width": 375,
+      "route": "/forgot-password",
+      "overflow": false,
+      "privateCache": true,
+      "logo": "official 3:1",
+      "state": "unconfigured form"
+    },
+    {
+      "width": 375,
+      "route": "/account",
+      "overflow": false,
+      "privateCache": true,
+      "logo": "official 3:1",
+      "state": "setup pending, no personal data"
+    },
+    {
+      "width": 390,
+      "route": "/sign-in",
+      "overflow": false,
+      "privateCache": true,
+      "logo": "official 3:1",
+      "state": "unconfigured form"
+    },
+    {
+      "width": 390,
+      "route": "/sign-up",
+      "overflow": false,
+      "privateCache": true,
+      "logo": "official 3:1",
+      "state": "unconfigured form"
+    },
+    {
+      "width": 390,
+      "route": "/forgot-password",
+      "overflow": false,
+      "privateCache": true,
+      "logo": "official 3:1",
+      "state": "unconfigured form"
+    },
+    {
+      "width": 390,
+      "route": "/account",
+      "overflow": false,
+      "privateCache": true,
+      "logo": "official 3:1",
+      "state": "setup pending, no personal data"
+    },
+    {
+      "width": 430,
+      "route": "/sign-in",
+      "overflow": false,
+      "privateCache": true,
+      "logo": "official 3:1",
+      "state": "unconfigured form"
+    },
+    {
+      "width": 430,
+      "route": "/sign-up",
+      "overflow": false,
+      "privateCache": true,
+      "logo": "official 3:1",
+      "state": "unconfigured form"
+    },
+    {
+      "width": 430,
+      "route": "/forgot-password",
+      "overflow": false,
+      "privateCache": true,
+      "logo": "official 3:1",
+      "state": "unconfigured form"
+    },
+    {
+      "width": 430,
+      "route": "/account",
+      "overflow": false,
+      "privateCache": true,
+      "logo": "official 3:1",
+      "state": "setup pending, no personal data"
+    },
+    {
+      "width": 768,
+      "route": "/sign-in",
+      "overflow": false,
+      "privateCache": true,
+      "logo": "official 3:1",
+      "state": "unconfigured form"
+    },
+    {
+      "width": 768,
+      "route": "/sign-up",
+      "overflow": false,
+      "privateCache": true,
+      "logo": "official 3:1",
+      "state": "unconfigured form"
+    },
+    {
+      "width": 768,
+      "route": "/forgot-password",
+      "overflow": false,
+      "privateCache": true,
+      "logo": "official 3:1",
+      "state": "unconfigured form"
+    },
+    {
+      "width": 768,
+      "route": "/account",
+      "overflow": false,
+      "privateCache": true,
+      "logo": "official 3:1",
+      "state": "setup pending, no personal data"
+    },
+    {
+      "width": 1024,
+      "route": "/sign-in",
+      "overflow": false,
+      "privateCache": true,
+      "logo": "official 3:1",
+      "state": "unconfigured form"
+    },
+    {
+      "width": 1024,
+      "route": "/sign-up",
+      "overflow": false,
+      "privateCache": true,
+      "logo": "official 3:1",
+      "state": "unconfigured form"
+    },
+    {
+      "width": 1024,
+      "route": "/forgot-password",
+      "overflow": false,
+      "privateCache": true,
+      "logo": "official 3:1",
+      "state": "unconfigured form"
+    },
+    {
+      "width": 1024,
+      "route": "/account",
+      "overflow": false,
+      "privateCache": true,
+      "logo": "official 3:1",
+      "state": "setup pending, no personal data"
+    },
+    {
+      "width": 1440,
+      "route": "/sign-in",
+      "overflow": false,
+      "privateCache": true,
+      "logo": "official 3:1",
+      "state": "unconfigured form"
+    },
+    {
+      "width": 1440,
+      "route": "/sign-up",
+      "overflow": false,
+      "privateCache": true,
+      "logo": "official 3:1",
+      "state": "unconfigured form"
+    },
+    {
+      "width": 1440,
+      "route": "/forgot-password",
+      "overflow": false,
+      "privateCache": true,
+      "logo": "official 3:1",
+      "state": "unconfigured form"
+    },
+    {
+      "width": 1440,
+      "route": "/account",
+      "overflow": false,
+      "privateCache": true,
+      "logo": "official 3:1",
+      "state": "setup pending, no personal data"
+    }
+  ],
+  "additional": [
+    "Home Sign In link",
+    "Password visibility toggle",
+    "Native email validation",
+    "No-store headers",
+    "Invalid token/code failure",
+    "External redirect denied",
+    "Unconfigured reset guarded",
+    "Forged cookie exposes no account data"
+  ]
+}
