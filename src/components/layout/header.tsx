@@ -1,6 +1,8 @@
 "use client";
 import { Menu, X, UserRound, ArrowUpRight } from "lucide-react";
 import { useRef, useState } from "react";
+import Link from "next/link";
+import { SweaplyLogo } from "@/components/branding/sweaply-logo";
 const entries = [
   { label: "Home", href: "#home" },
   { label: "Our Services", href: "#services" },
@@ -9,41 +11,25 @@ const entries = [
   { label: "Blog" },
   { label: "About Us" },
   { label: "Contact Us" },
-  { label: "Sign In / Create Account" },
+  { label: "Sign In / Create Account", href: "/sign-in" },
 ];
-export function Wordmark() {
-  return (
-    <a className="wordmark" href="#home" aria-label="Sweaply home">
-      sweaply
-      <span className="logo-spark" aria-hidden="true">
-        ✦
-      </span>
-      <span className="logo-swoop" aria-hidden="true" />
-    </a>
-  );
-}
 export function Header() {
   const [open, setOpen] = useState(false);
   const trigger = useRef<HTMLButtonElement>(null);
   return (
     <header className="site-header">
       <div className="container header-inner">
-        <Wordmark />
+        <SweaplyLogo priority />
         <nav className="desktop-nav" aria-label="Main navigation">
           <a href="#services">Our Services</a>
           <a href="#cleaners">Find a Cleaner</a>
           <a href="#how-it-works">How It Works</a>
         </nav>
         <div className="header-actions">
-          <button
-            className="sign-in"
-            disabled
-            title="Sign in is coming in a future phase"
-          >
+          <Link className="sign-in" href="/sign-in">
             <UserRound size={18} />
             <span>Sign In</span>
-            <span className="sr-only"> — coming soon</span>
-          </button>
+          </Link>
           <button
             ref={trigger}
             className="icon-button menu-toggle"

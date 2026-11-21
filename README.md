@@ -1,10 +1,10 @@
 # Sweaply
 
-Mobile-first homepage for a Minneapolis–St. Paul residential cleaning platform. Next.js App Router, TypeScript, Tailwind CSS 4, and Lucide icons. Only the homepage is implemented.
+Mobile-first homepage for a Minneapolis–St. Paul residential cleaning platform. Next.js App Router, TypeScript, Tailwind CSS 4, and Lucide icons. The approved homepage is preserved. Phase 2 adds server-side Supabase authentication and customer-account foundations. See [Phase 2 setup and security](docs/PHASE-2.md).
 
 ## Run locally
 
-Requires Node.js 20.9 or newer.
+Use Node.js 24 LTS for the development/security-test toolchain.
 
 ```sh
 npm ci
@@ -16,6 +16,7 @@ Open http://localhost:3000. Development mode includes a clearly labeled, collaps
 ```sh
 npm run lint
 npm run typecheck
+npm run test:security
 npm run build
 npm run check:production
 npm start
@@ -23,7 +24,7 @@ npm start
 
 ## Honest launch state
 
-`src/lib/cleaners.ts` contains the empty verified-profile collection and typed development fixtures. Production displays the local-network empty state. No ratings, testimonials, fixed prices, phone number, or confirmed bookings are invented. Estimates, service details, and cleaner applications open launch-information dialogs; they send nothing. Sign-in and phone actions are disabled. Planned pages are listed in `docs/ROADMAP.md`.
+`src/lib/cleaners.ts` contains the empty verified-profile collection and typed development fixtures. Production displays the local-network empty state. No ratings, testimonials, fixed prices, phone number, or confirmed bookings are invented. Estimates, service details, and cleaner applications open launch-information dialogs; they send nothing. Sign-in links to the new auth pages; phone support remains disabled. Supabase integration is disabled by default with `SWEAPLY_SUPABASE_ENABLED=false`. No real authentication or customer accounts are functional in this offline phase. Do not connect existing projects, provision a database, or apply the prepared migrations. Planned pages are listed in `docs/ROADMAP.md`.
 
 ## Structure
 
@@ -36,8 +37,16 @@ npm start
 
 ## Vercel
 
-Import this repository as a Next.js project using the default build (`npm run build`). No environment variables or external integrations are required. This change does not create or modify a deployment.
+Import this repository as a Next.js project using the default build (`npm run build`). The homepage works without environment variables. Auth and account access require the reviewed Supabase configuration described in `docs/PHASE-2.md`. This change does not create or modify a deployment.
 
 ## Accessibility
 
 Semantic landmarks, skip link, visible focus, native dialogs with Escape and modal focus containment, return focus, background scroll locking, reduced-motion support, safe-area modal spacing, keyboard and swipe carousel navigation. The mobile menu uses normal document navigation and returns focus to its trigger on Escape.
+
+## Offline development preview
+
+```sh
+SWEAPLY_SUPABASE_ENABLED=false SWEAPLY_ENABLE_ACCOUNT_PREVIEW=true npm run dev -- --port 3001
+```
+
+Open `/dev/account` for the labeled UI-only dashboard or `/dev/account?section=bookings&scenario=completed` for the fictional repeat-cleaner fixture. Auth pages offer local validation checks, with real submit actions disabled. There is no demo login or simulated successful authentication. Previews return 404 in production. Run `npm run test:demo` against this development server. See `docs/PHASE-2.md` for controls, screenshots, and the future connection checklist.
