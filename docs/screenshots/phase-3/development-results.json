@@ -1,0 +1,99 @@
+{
+  "mode": "development fixtures only",
+  "checks": [
+    {
+      "width": 360,
+      "route": "/dev/marketplace",
+      "modal": true,
+      "request": "not submitted",
+      "carousel": "controls and keyboard"
+    },
+    {
+      "width": 360,
+      "route": "/dev/cleaner",
+      "sections": 6,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 375,
+      "route": "/dev/marketplace",
+      "modal": true,
+      "request": "not submitted",
+      "carousel": "controls and keyboard"
+    },
+    {
+      "width": 375,
+      "route": "/dev/cleaner",
+      "sections": 6,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 390,
+      "route": "/dev/marketplace",
+      "modal": true,
+      "request": "not submitted",
+      "carousel": "controls and keyboard"
+    },
+    {
+      "width": 390,
+      "route": "/dev/cleaner",
+      "sections": 6,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 430,
+      "route": "/dev/marketplace",
+      "modal": true,
+      "request": "not submitted",
+      "carousel": "controls and keyboard"
+    },
+    {
+      "width": 430,
+      "route": "/dev/cleaner",
+      "sections": 6,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 768,
+      "route": "/dev/marketplace",
+      "modal": true,
+      "request": "not submitted",
+      "carousel": "controls and keyboard"
+    },
+    {
+      "width": 768,
+      "route": "/dev/cleaner",
+      "sections": 6,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1024,
+      "route": "/dev/marketplace",
+      "modal": true,
+      "request": "not submitted",
+      "carousel": "controls and keyboard"
+    },
+    {
+      "width": 1024,
+      "route": "/dev/cleaner",
+      "sections": 6,
+      "horizontalOverflow": false
+    },
+    {
+      "width": 1440,
+      "route": "/dev/marketplace",
+      "modal": true,
+      "request": "not submitted",
+      "carousel": "all cards fit"
+    },
+    {
+      "width": 1440,
+      "route": "/dev/cleaner",
+      "sections": 6,
+      "horizontalOverflow": false
+    }
+  ],
+  "posts": 0,
+  "providerRequests": 0,
+  "browserErrors": 0
+}

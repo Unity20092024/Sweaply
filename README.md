@@ -11,7 +11,7 @@ npm ci
 npm run dev
 ```
 
-Open http://localhost:3000. Development mode includes a clearly labeled, collapsed sample-profile carousel for exercising profiles, keyboard navigation, and the modal. These fixtures are absent from the production-rendered homepage.
+Open http://localhost:3000. With `SWEAPLY_ENABLE_MARKETPLACE_PREVIEW=true`, development mode includes a clearly labeled, collapsed sample-profile carousel for exercising profiles, keyboard navigation, and the modal. These fixtures are absent from the production-rendered homepage.
 
 ```sh
 npm run lint
@@ -50,3 +50,13 @@ SWEAPLY_SUPABASE_ENABLED=false SWEAPLY_ENABLE_ACCOUNT_PREVIEW=true npm run dev -
 ```
 
 Open `/dev/account` for the labeled UI-only dashboard or `/dev/account?section=bookings&scenario=completed` for the fictional repeat-cleaner fixture. Auth pages offer local validation checks, with real submit actions disabled. There is no demo login or simulated successful authentication. Previews return 404 in production. Run `npm run test:demo` against this development server. See `docs/PHASE-2.md` for controls, screenshots, and the future connection checklist.
+
+## Phase 3 cleaner marketplace
+
+The homepage cleaner section, profile modal, local request-review workflow, `/become-a-cleaner` application preview, and disconnected `/cleaner/dashboard` are implemented. Real requests and applications cannot be submitted. Supabase remains disabled; no project or database is contacted.
+
+```sh
+SWEAPLY_SUPABASE_ENABLED=false SWEAPLY_ENABLE_MARKETPLACE_PREVIEW=true npm run dev -- --port 3001
+```
+
+Use `/dev/marketplace` and `/dev/cleaner` for labeled development fixtures. These routes return 404 in production. Run `npm run test:marketplace:rules`, production `npm run test:marketplace`, or development `MARKETPLACE_TEST_MODE=development npm run test:marketplace`. See [Phase 3 scope, safety, and screenshots](docs/PHASE-3.md).

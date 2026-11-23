@@ -9,9 +9,13 @@
 
 Authentication/account functionality requires the confirmed Sweaply Supabase project, environment configuration, and approved migrations described in `PHASE-2.md`. No hosted Supabase project has been changed.
 
+## Phase 3 implemented
+
+`/become-a-cleaner` (local application review, no submission) and `/cleaner/dashboard` (honest disconnected state). Development-only `/dev/marketplace` and `/dev/cleaner` provide labeled UI fixtures; they return 404 in production. See `PHASE-3.md`. No Supabase project is connected.
+
 ## Future public pages
 
-`/services`, `/cleaners`, `/how-it-works`, `/about`, `/blog`, `/contact`, `/help`, `/service-areas`, `/become-a-cleaner`, `/privacy`, `/terms`, `/cancellation-policy`.
+`/services`, `/cleaners`, `/how-it-works`, `/about`, `/blog`, `/contact`, `/help`, `/service-areas`, `/privacy`, `/terms`, `/cancellation-policy`.
 
 Existing homepage navigation uses valid in-page sections. Unbuilt public pages remain visibly unavailable; no completed pages are implied.
 
@@ -23,7 +27,7 @@ These may later become dedicated routes. The current foundation displays these s
 
 ## Future cleaner and admin portals
 
-`/cleaner/dashboard`, `/cleaner/requests`, `/cleaner/jobs`, `/cleaner/profile`, `/admin`.
+`/cleaner/requests`, `/cleaner/jobs`, `/cleaner/profile`, `/admin`.
 
 Cleaner/admin role assignments are reserved in a private database table with no customer grants. Cleaner acceptance and administrative workflows are not implemented.
 
