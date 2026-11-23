@@ -37,9 +37,9 @@ const routeDirectories = readdirSync("src/app", { withFileTypes: true }).filter(
 );
 assert.deepEqual(
   routeDirectories.map((d) => d.name).sort(),
-  ["(auth)", "account", "auth", "dev"],
-  "Only homepage and phase-two account/auth routes are implemented",
+  ["(auth)", "account", "auth", "become-a-cleaner", "cleaner", "dev"],
+  "Only approved phase-one through phase-three routes are implemented",
 );
 console.log(
-  "PASS: no demo content in production, required sections rendered, four image files present, phase-two route scope.",
+  "PASS: no demo content in production, required sections rendered, four image files present, phase-three route scope.",
 );

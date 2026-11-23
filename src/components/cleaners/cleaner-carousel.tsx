@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight, MapPin, Star, UserRound } from "lucide-react";
-import { useRef, useState } from "react";
-import type { Cleaner } from "@/lib/cleaners";
+import { useEffect, useRef, useState } from "react";
+import { verifiedRating, type Cleaner } from "@/lib/cleaners";
 import { CleanerModal } from "./cleaner-modal";
 export function CleanerCard({
   cleaner,
@@ -11,13 +11,18 @@ export function CleanerCard({
   cleaner: Cleaner;
   onView: () => void;
 }) {
+  const rating = verifiedRating(cleaner);
   return (
     <article className="cleaner-card">
       <div className="cleaner-portrait">
         {cleaner.portrait ? (
           <Image
             src={cleaner.portrait}
-            alt={cleaner.name}
+            alt={
+              cleaner.isFixture
+                ? "Stock portrait · demonstration only"
+                : cleaner.name
+            }
             fill
             sizes="(max-width: 600px) 80vw, 320px"
           />
@@ -25,15 +30,15 @@ export function CleanerCard({
           <UserRound size={72} strokeWidth={1} aria-hidden="true" />
         )}
         {cleaner.isFixture && (
-          <span className="fixture-label">DEMO PROFILE</span>
+          <span className="fixture-label">DEMO PROFILE · STOCK PHOTO</span>
         )}
       </div>
       <div className="cleaner-details">
         <h3>{cleaner.name}</h3>
-        {cleaner.rating && (
+        {rating && (
           <p className="rating">
             <Star size={17} />
-            {cleaner.rating.average} ({cleaner.rating.count} reviews)
+            {rating.average} ({rating.count} reviews)
           </p>
         )}
         <p>{cleaner.specialties.join(" · ")}</p>
@@ -52,6 +57,22 @@ export function CleanerCard({
 export function CleanerCarousel({ cleaners }: { cleaners: Cleaner[] }) {
   const track = useRef<HTMLDivElement>(null);
   const [selected, setSelected] = useState<Cleaner | null>(null);
+  const [edges, setEdges] = useState({ previous: false, next: false });
+  const updateEdges = () => {
+    const el = track.current;
+    if (el)
+      setEdges({
+        previous: el.scrollLeft > 2,
+        next: el.scrollLeft + el.clientWidth < el.scrollWidth - 2,
+      });
+  };
+  useEffect(() => {
+    const el = track.current;
+    if (!el) return;
+    const observer = new ResizeObserver(updateEdges);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
   const move = (direction: number) => {
     const el = track.current;
     if (el)
@@ -70,6 +91,7 @@ export function CleanerCarousel({ cleaners }: { cleaners: Cleaner[] }) {
       <div className="carousel-controls">
         <button
           className="icon-button"
+          disabled={!edges.previous}
           aria-label="Previous cleaner profiles"
           onClick={() => move(-1)}
         >
@@ -77,6 +99,7 @@ export function CleanerCarousel({ cleaners }: { cleaners: Cleaner[] }) {
         </button>
         <button
           className="icon-button"
+          disabled={!edges.next}
           aria-label="Next cleaner profiles"
           onClick={() => move(1)}
         >
@@ -85,6 +108,7 @@ export function CleanerCarousel({ cleaners }: { cleaners: Cleaner[] }) {
       </div>
       <div
         ref={track}
+        onScroll={updateEdges}
         className="carousel-track"
         tabIndex={0}
         role="region"

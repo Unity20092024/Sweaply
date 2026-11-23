@@ -1,0 +1,134 @@
+{
+  "mode": "production disconnected",
+  "checks": [
+    {
+      "width": 360,
+      "route": "/",
+      "horizontalOverflow": false,
+      "realCleaners": 0
+    },
+    {
+      "width": 360,
+      "route": "/become-a-cleaner",
+      "horizontalOverflow": false,
+      "realCleaners": 0
+    },
+    {
+      "width": 360,
+      "route": "/cleaner/dashboard",
+      "horizontalOverflow": false,
+      "realCleaners": 0
+    },
+    {
+      "width": 375,
+      "route": "/",
+      "horizontalOverflow": false,
+      "realCleaners": 0
+    },
+    {
+      "width": 375,
+      "route": "/become-a-cleaner",
+      "horizontalOverflow": false,
+      "realCleaners": 0
+    },
+    {
+      "width": 375,
+      "route": "/cleaner/dashboard",
+      "horizontalOverflow": false,
+      "realCleaners": 0
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "horizontalOverflow": false,
+      "realCleaners": 0
+    },
+    {
+      "width": 390,
+      "route": "/become-a-cleaner",
+      "horizontalOverflow": false,
+      "realCleaners": 0
+    },
+    {
+      "width": 390,
+      "route": "/cleaner/dashboard",
+      "horizontalOverflow": false,
+      "realCleaners": 0
+    },
+    {
+      "width": 430,
+      "route": "/",
+      "horizontalOverflow": false,
+      "realCleaners": 0
+    },
+    {
+      "width": 430,
+      "route": "/become-a-cleaner",
+      "horizontalOverflow": false,
+      "realCleaners": 0
+    },
+    {
+      "width": 430,
+      "route": "/cleaner/dashboard",
+      "horizontalOverflow": false,
+      "realCleaners": 0
+    },
+    {
+      "width": 768,
+      "route": "/",
+      "horizontalOverflow": false,
+      "realCleaners": 0
+    },
+    {
+      "width": 768,
+      "route": "/become-a-cleaner",
+      "horizontalOverflow": false,
+      "realCleaners": 0
+    },
+    {
+      "width": 768,
+      "route": "/cleaner/dashboard",
+      "horizontalOverflow": false,
+      "realCleaners": 0
+    },
+    {
+      "width": 1024,
+      "route": "/",
+      "horizontalOverflow": false,
+      "realCleaners": 0
+    },
+    {
+      "width": 1024,
+      "route": "/become-a-cleaner",
+      "horizontalOverflow": false,
+      "realCleaners": 0
+    },
+    {
+      "width": 1024,
+      "route": "/cleaner/dashboard",
+      "horizontalOverflow": false,
+      "realCleaners": 0
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "horizontalOverflow": false,
+      "realCleaners": 0
+    },
+    {
+      "width": 1440,
+      "route": "/become-a-cleaner",
+      "horizontalOverflow": false,
+      "realCleaners": 0
+    },
+    {
+      "width": 1440,
+      "route": "/cleaner/dashboard",
+      "horizontalOverflow": false,
+      "realCleaners": 0
+    }
+  ],
+  "posts": 0,
+  "providerRequests": 0,
+  "browserErrors": 0
+}

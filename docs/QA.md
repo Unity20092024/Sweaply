@@ -43,3 +43,7 @@ Only the shared logo, its CSS, and branding documentation/assets changed. Homepa
 ## Phase 2
 
 For the authentication/customer-account implementation, current verification, required configuration, and the explicit hosted-auth test limitation, see `PHASE-2.md` and `screenshots/phase-2/results.json`. Phase 1 homepage-only scope notes above describe the earlier delivery.
+
+## Phase 3
+
+Current cleaner-marketplace scope and results are in `PHASE-3.md`. Reproducible production/development browser scripts and rule checks are documented there; 390px screenshots and machine-readable results are in `screenshots/phase-3/`. All backend operations remain disconnected.

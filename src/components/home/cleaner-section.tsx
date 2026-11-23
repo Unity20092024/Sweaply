@@ -1,8 +1,12 @@
 import { ArrowUpRight, MapPin, Sparkles, UsersRound } from "lucide-react";
 import { CleanerCarousel } from "@/components/cleaners/cleaner-carousel";
-import { developmentCleaners, liveCleaners } from "@/lib/cleaners";
-import { LaunchAction } from "./launch-action";
+import { approvedCleaners, liveCleaners } from "@/lib/cleaners";
+import { developmentCleaners } from "@/lib/cleaner-fixtures";
+import { marketplacePreviewEnabled } from "@/lib/marketplace-preview";
+import Link from "next/link";
+
 export function CleanerSection() {
+  const cleaners = approvedCleaners(liveCleaners);
   return (
     <section id="cleaners" className="cleaner-section">
       <div className="container">
@@ -21,8 +25,8 @@ export function CleanerSection() {
           </div>
           <span className="section-index">01 / YOUR PEOPLE</span>
         </div>
-        {liveCleaners.length ? (
-          <CleanerCarousel cleaners={liveCleaners} />
+        {cleaners.length ? (
+          <CleanerCarousel cleaners={cleaners} />
         ) : (
           <div className="network-empty">
             <div className="network-art" aria-hidden="true">
@@ -46,13 +50,9 @@ export function CleanerSection() {
                 favorite cleaner.
               </h3>
               <p>Our local cleaner network is growing.</p>
-              <LaunchAction
-                title="Make a fresh start with Sweaply."
-                message="Cleaner applications aren’t open just yet. We’re preparing our Twin Cities network; check back for application details."
-                variant="outline"
-              >
-                Become a Sweaply Cleaner
-              </LaunchAction>
+              <Link className="button button-outline" href="/become-a-cleaner">
+                Become a Sweaply Cleaner <ArrowUpRight size={17} />
+              </Link>
             </div>
             <ArrowUpRight
               className="empty-arrow"
@@ -66,7 +66,7 @@ export function CleanerSection() {
           A personal connection, at your pace. All cleaner requests require
           acceptance.
         </p>
-        {process.env.NODE_ENV === "development" && (
+        {marketplacePreviewEnabled() && (
           <details className="development-preview">
             <summary>
               Development preview · sample profiles, not real cleaners

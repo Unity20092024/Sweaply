@@ -16,7 +16,7 @@ const groups = [
     items: [
       ["About Us", ""],
       ["Contact", ""],
-      ["Become a Sweaply Cleaner", ""],
+      ["Become a Sweaply Cleaner", "/become-a-cleaner"],
     ],
   },
   {

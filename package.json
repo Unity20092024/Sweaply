@@ -11,7 +11,9 @@
     "check:production": "node scripts/check-production.mjs",
     "test:security": "node scripts/test-auth-security.mjs && node scripts/test-database.mjs",
     "test:browser": "node scripts/test-browser.mjs",
-    "test:demo": "node scripts/test-demo-browser.mjs"
+    "test:demo": "node scripts/test-demo-browser.mjs",
+    "test:marketplace:rules": "node scripts/test-marketplace-rules.mjs",
+    "test:marketplace": "node scripts/test-marketplace-browser.mjs"
   },
   "dependencies": {
     "@supabase/ssr": "0.12.7",
